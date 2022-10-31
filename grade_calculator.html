@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #loader{
+              position: fixed;
+              width: 100%;
+              height: 100vh;
+              background:white url("https://loading.io/spinners/progress-pie/1g.percent-circular-preloader-gif.gif");
+/*              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+           border: 16px solid whitesmoke;
+           border-radius: 50%;
+           border-top: 16px solid blue;
+           height: 80px;
+           width: 80px;*/
+           animation: spin 2s linear infinite;
+           z-index: 100;
+           }
+            .main{
+                background-color: cadetblue;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            .form{
+                height: 480px;
+                width: 60%;
+                background-color: chartreuse;
+                box-shadow: 5px 6px 5px 2px black;
+                border: 2px solid white;
+                border-radius: 12px;
+                position: relative;
+            }
+            .form h2{
+                font-size: 56px;
+                color: white;
+                text-align: left;
+                padding-top: 100px;
+                padding-left: 25px;
+                text-shadow:4px 6px 6px black;
+            }
+            .bar{
+                position: absolute;
+                top: 110px;
+                left: 400px;
+                border: 1px solid black;
+                width: 6px;
+                height: 130px;
+                background-color: green;
+            }
+            .form-grp{
+                position: absolute;
+                right: 10px;
+                top:50px;
+                width: 260px;
+                height: 320px;
+            }
+            .result{
+                position: absolute;
+                height: 100px;
+                width: 320px;
+                bottom: 10px;
+                right: 10px;
+               border: 2px solid black;
+               border-radius: 18px;
+               background-color: #333333 ;
+               color: whitesmoke;
+               padding: 18px 32px;
+               box-shadow: 4px 6px 6px black;
+            }
+            input[type=text]{
+                /*border-bottom:  5px solid white;*/
+                border-radius: 8px;
+                padding: 8px 12px;
+                margin-bottom: 18px;
+                background-color: chocolate;
+                color:white;
+                box-shadow: 3px 3px 8px black;
+                text-align: center;
+            }
+         
+            ::placeholder{
+                color: white;
+                opacity: 0.8;
+            }
+            input[type=button]{
+                width: 96%;
+                color: white;
+                background-color:  cadetblue;
+                padding: 8px 6px;
+                margin-bottom: 18px;
+                box-shadow: 3px 4px 8px black;
+                text-shadow:2px 3px 5px black;
+                
+                letter-spacing: 2px;
+            }
+/*              @keyframes spin{
+                   0%{transform:rotate(0deg);}
+                   100%{transform:rotate(360deg);}
+               }*/
+        </style>
+    </head>
+    <body onload="myload()">
+        <div id="loader"></div>
+
+        <div class="main">
+            <div class="form">
+                <h2>Student Grade<br> Calc</h2>
+                <div class="bar"></div>
+                <div class="form-grp">
+                    <input type="text" class="grp" id="mt" size="30"   placeholder="Mathematics">
+                    <input type="text" class="grp" id="wd" size="30" placeholder="Web-Development">
+                    <input type="text" class="grp" id="pg" size="30" placeholder="Programming">
+                    <input type="text" class="grp" id="nk" size="30" placeholder="Networking">
+                    <input type="button" value="Calculate"  onclick="calcy()">
+                    <!--<input type="text" id="res" size="15" >-->
+                  
+                </div>
+              
+                <div class='result'>
+                    <h3>Result display here :</h3>
+                    <p  style="color: white;" id="para"></p>
+                </div>
+                 
+            </div>
+        </div>
+        <script src ="pro.js"></script>
+
+    </body>
+</html>
